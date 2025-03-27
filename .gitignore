@@ -1,0 +1,6 @@
+orthanc/db/[a-z0-9]*
+orthanc/db/index
+orthanc/db/WebWieverCache/
+monai/model/*.pt
+monai/model/*.yaml
+

@@ -1,0 +1,25 @@
+services:
+    orthanc:
+        image: jodogne/orthanc-plugins:latest
+        restart: unless-stopped
+        ports:
+            - "8042:8042"
+            - "4242:4242"
+        volumes:
+            - ./orthanc/db/:/var/lib/orthanc/db/
+#            - ./orthanc/config/:/etc/orthanc/
+
+    monai:
+        build:
+            context: ./monai
+            dockerfile: ./Dockerfile.wp
+        environment:
+            - STUDIES=http://orthanc:orthanc@orthanc:8042/dicom-web
+            - MODELS=segmentation_spleen
+#            - ORTHANC_PASSWORD=orthanc
+        volumes:
+            - ./monai/model:/opt/monai/apps/radiology/model
+        ports:
+            - "8000:8000"
+        depends_on:
+            - orthanc
