@@ -15,11 +15,163 @@ services:
             dockerfile: ./Dockerfile.wp
         environment:
             - STUDIES=http://orthanc:orthanc@orthanc:8042/dicom-web
-            - MODELS=segmentation_spleen
+            - MODELS=all
 #            - ORTHANC_PASSWORD=orthanc
         volumes:
-            - ./monai/model:/opt/monai/apps/radiology/model
+            - ./monai/model:/opt/monai/apps/radiology/model:ro
         ports:
             - "8000:8000"
+        depends_on:
+            - orthanc
+
+    monai1:
+        build:
+            context: ./monai
+            dockerfile: ./Dockerfile.wp
+        environment:
+            - STUDIES=http://orthanc:orthanc@orthanc:8042/dicom-web
+            - MODELS=all
+#            - ORTHANC_PASSWORD=orthanc
+        volumes:
+            - ./monai/model:/opt/monai/apps/radiology/model:ro
+        ports:
+            - "8001:8000"
+        depends_on:
+            - orthanc
+
+    monai2:
+        build:
+            context: ./monai
+            dockerfile: ./Dockerfile.wp
+        environment:
+            - STUDIES=http://orthanc:orthanc@orthanc:8042/dicom-web
+            - MODELS=all
+#            - ORTHANC_PASSWORD=orthanc
+        volumes:
+            - ./monai/model:/opt/monai/apps/radiology/model:ro
+        ports:
+            - "8002:8000"
+        depends_on:
+            - orthanc
+    monai3:
+        build:
+            context: ./monai
+            dockerfile: ./Dockerfile.wp
+        environment:
+            - STUDIES=http://orthanc:orthanc@orthanc:8042/dicom-web
+            - MODELS=all
+#            - ORTHANC_PASSWORD=orthanc
+        volumes:
+            - ./monai/model:/opt/monai/apps/radiology/model:ro
+        ports:
+            - "8003:8000"
+        depends_on:
+            - orthanc
+
+    monai4:
+        build:
+            context: ./monai
+            dockerfile: ./Dockerfile.wp
+        environment:
+            - STUDIES=http://orthanc:orthanc@orthanc:8042/dicom-web
+            - MODELS=all
+#            - ORTHANC_PASSWORD=orthanc
+        volumes:
+            - ./monai/model:/opt/monai/apps/radiology/model:ro
+        ports:
+            - "8004:8000"
+        depends_on:
+            - orthanc
+
+    monai5:
+        build:
+            context: ./monai
+            dockerfile: ./Dockerfile.wp
+        environment:
+            - STUDIES=http://orthanc:orthanc@orthanc:8042/dicom-web
+            - MODELS=all
+#            - ORTHANC_PASSWORD=orthanc
+        volumes:
+            - ./monai/model:/opt/monai/apps/radiology/model:ro
+        ports:
+            - "8005:8000"
+        depends_on:
+            - orthanc
+
+
+    monai6:
+        build:
+            context: ./monai
+            dockerfile: ./Dockerfile.wp
+        environment:
+            - STUDIES=http://orthanc:orthanc@orthanc:8042/dicom-web
+            - MODELS=all
+#            - ORTHANC_PASSWORD=orthanc
+        volumes:
+            - ./monai/model:/opt/monai/apps/radiology/model:ro
+        ports:
+            - "8006:8000"
+        depends_on:
+            - orthanc
+
+
+    monai7:
+        build:
+            context: ./monai
+            dockerfile: ./Dockerfile.wp
+        environment:
+            - STUDIES=http://orthanc:orthanc@orthanc:8042/dicom-web
+            - MODELS=all
+#            - ORTHANC_PASSWORD=orthanc
+        volumes:
+            - ./monai/model:/opt/monai/apps/radiology/model:ro
+        ports:
+            - "8007:8000"
+        depends_on:
+            - orthanc
+
+    monai8:
+        build:
+            context: ./monai
+            dockerfile: ./Dockerfile.wp
+        environment:
+            - STUDIES=http://orthanc:orthanc@orthanc:8042/dicom-web
+            - MODELS=all
+#            - ORTHANC_PASSWORD=orthanc
+        volumes:
+            - ./monai/model:/opt/monai/apps/radiology/model:ro
+        ports:
+            - "8008:8000"
+        depends_on:
+            - orthanc
+
+
+    monai9:
+        build:
+            context: ./monai
+            dockerfile: ./Dockerfile.wp
+        environment:
+            - STUDIES=http://orthanc:orthanc@orthanc:8042/dicom-web
+            - MODELS=all
+#            - ORTHANC_PASSWORD=orthanc
+        volumes:
+            - ./monai/model:/opt/monai/apps/radiology/model:ro
+        ports:
+            - "8009:8000"
+        depends_on:
+            - orthanc
+
+    monai10:
+        build:
+            context: ./monai
+            dockerfile: ./Dockerfile.wp
+        environment:
+            - STUDIES=http://orthanc:orthanc@orthanc:8042/dicom-web
+            - MODELS=all
+#            - ORTHANC_PASSWORD=orthanc
+        volumes:
+            - ./monai/model:/opt/monai/apps/radiology/model:ro
+        ports:
+            - "8010:8000"
         depends_on:
             - orthanc
